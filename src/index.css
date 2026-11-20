@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #fdfbf7;
+  --color-gold-100: #faf5ea;
+  --color-gold-200: #f4e8d2;
+  --color-gold-300: #e9d5ab;
+  --color-gold-400: #d6b875;
+  --color-gold-500: #c5a253;
+  --color-gold-600: #aa843a;
+  --color-gold-700: #87642c;
+  --color-gold-800: #6e5027;
+  --color-gold-900: #573f21;
+
+  --color-obsidian: #111111;
+  --color-charcoal: #202020;
+  --color-charcoal-light: #2d2d2d;
+  --color-charcoal-card: #1a1a1a;
+  --color-ivory: #F5F1E8;
+  --color-ivory-light: #FAF8F5;
+  --color-deep-olive: #29372F;
+  --color-deep-olive-light: #374a3f;
+  --color-subtle-grey: #858585;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF8F5;
+    color: #1A1A1A;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, .font-luxury {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom Gold and Ivory Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F1E8;
+}
+::-webkit-scrollbar-thumb {
+  background: #D6B875;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B8934A;
+}
+
+/* Luxury Card Borders and Shadows */
+.gold-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(214, 184, 117, 0.22);
+  box-shadow: 0 4px 20px -2px rgba(32, 32, 32, 0.04), 0 1px 3px rgba(214, 184, 117, 0.08);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gold-card:hover {
+  border-color: rgba(214, 184, 117, 0.45);
+  box-shadow: 0 8px 30px -4px rgba(214, 184, 117, 0.12), 0 2px 6px rgba(32, 32, 32, 0.04);
+}
+
+.dark-gold-card {
+  background: #181818;
+  border: 1px solid rgba(214, 184, 117, 0.2);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.4);
+}
+
+/* Gold Gradient Accents */
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #D6B875 0%, #C5A253 100%);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #D6B875 0%, #C5A253 50%, #EFE1B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-metallic-border {
+  border-image: linear-gradient(135deg, #D6B875, #87642C, #F4E8D2, #C5A253) 1;
+}
+
+/* Micro-animations */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 3s infinite ease-in-out;
+}
